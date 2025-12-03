@@ -11,8 +11,13 @@ import {
   featuredDeals,
 } from "@/lib/data";
 import { HeroSection } from "@/components/sections/hero-section";
-import { CodeIcon, ArticleIcon, GiftIcon, PlayIcon, TerminalIcon } from "@/components/icons/home";
-
+import {
+  CodeIcon,
+  ArticleIcon,
+  GiftIcon,
+  PlayIcon,
+  TerminalIcon,
+} from "@/components/icons/home";
 
 export default function HomePage() {
   return (
@@ -26,10 +31,10 @@ export default function HomePage() {
             name: "DevEnGalère",
             description:
               "Le hub créatif pour développeurs - Projets, Blog, Vidéos et Bons Plans",
-            url: "https://devengalere.com",
+            url: "https://devengalere.fr",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://devengalere.com/search?q={search_term_string}",
+              target: "https://devengalere.fr/search?q={search_term_string}",
               "query-input": "required name=search_term_string",
             },
           }),

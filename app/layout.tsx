@@ -69,21 +69,21 @@ export const metadata: Metadata = {
   authors: [{ name: "DevEnGalère" }],
   creator: "DevEnGalère",
   publisher: "DevEnGalère",
-  metadataBase: new URL("https://devengalere.com"),
+  metadataBase: new URL("https://devengalere.fr"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://devengalere.com",
+    url: "https://devengalere.fr",
     title: "DevEnGalère | Le hub créatif pour devs en galère",
     description:
       "Projets open source, articles techniques, tutoriels vidéo et bons plans pour développeurs. La communauté dev qui galère mais qui progresse.",
     siteName: "DevEnGalère",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/favicon-for-public/web-app-manifest-192x192.png",
         width: 1200,
         height: 630,
         alt: "DevEnGalère - Le hub créatif pour devs",
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     description:
       "Projets open source, articles techniques, tutoriels vidéo et bons plans pour développeurs.",
     creator: "@devengalere",
-    images: ["/og-image.jpg"],
+    images: ["/favicon-for-public/web-app-manifest-192x192.png"],
   },
   robots: {
     index: true,
@@ -126,6 +126,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="dark">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="DevEnGalere" />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >

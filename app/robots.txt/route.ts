@@ -2,7 +2,7 @@ export async function GET() {
   const robots = `User-agent: *
 Allow: /
 
-Sitemap: https://devengalere.com/sitemap.xml`
+Sitemap: https://devengalere.fr/sitemap.xml`
 
   return new Response(robots, {
     headers: {

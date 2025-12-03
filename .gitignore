@@ -1,8 +1,25 @@
-/** node_modules */
-node_modules
+# Dossiers de dépendances
+node_modules/
 
-/** .next */
-.next
+# Dossiers et fichiers de sortie/compilation
+/.next/
+/out/
+.swc/
 
-/** .vscode */
-.vscode
+# Fichiers de variables d'environnement (locales et sensibles)
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Build artifacts
+# Les fichiers générés lors du build peuvent varier, mais .next/ est le plus important.
+
+# Fichiers de logs
+*.log
+
+# Fichiers divers ou spécifiques au système d'exploitation
+.DS_Store # macOS
+Thumbs.db # Windows
+.vscode/ # Configuration de l'IDE VS Code (si vous ne voulez pas la partager)
+.antigravity

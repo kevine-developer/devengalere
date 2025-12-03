@@ -1,24 +1,42 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { NAV_LINKS } from "@/lib/constants"
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { NAV_LINKS } from "@/lib/constants";
 
 const LogoIcon = () => {
   return (
-    <svg viewBox="0 0 40 40" className="h-10 w-10" fill="none" aria-hidden="true">
+    <svg
+      viewBox="0 0 40 40"
+      className="h-10 w-10"
+      fill="none"
+      aria-hidden="true"
+    >
       <rect width="40" height="40" fill="#c8ff00" />
-      <path d="M8 12L16 20L8 28" stroke="#0a0a0a" strokeWidth="3" strokeLinecap="square" />
-      <line x1="18" y1="28" x2="32" y2="28" stroke="#0a0a0a" strokeWidth="3" strokeLinecap="square" />
+      <path
+        d="M8 12L16 20L8 28"
+        stroke="#0a0a0a"
+        strokeWidth="3"
+        strokeLinecap="square"
+      />
+      <line
+        x1="18"
+        y1="28"
+        x2="32"
+        y2="28"
+        stroke="#0a0a0a"
+        strokeWidth="3"
+        strokeLinecap="square"
+      />
     </svg>
-  )
-}
+  );
+};
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [{ href: "/", label: "Accueil" }, ...NAV_LINKS]
+  const navItems = [{ href: "/", label: "Accueil" }, ...NAV_LINKS];
 
   return (
     <header className="sticky top-0 z-40 border-b border-(--deg-gray-light) bg-(--deg-black)/95 backdrop-blur-sm">
@@ -28,8 +46,11 @@ export function Header() {
       >
         <div className="animate-marquee flex whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
-            <span key={i} className="mx-8 text-xs font-bold uppercase tracking-wider text-(--deg-black)">
-              DEV EN GALÈRE • CODE • BLOG • VIDÉOS • PROJETS • BONS PLANS • À PROPOS •
+            <span
+              key={i}
+              className="mx-8 text-xs font-bold uppercase tracking-wider text-(--deg-black)"
+            >
+              DEV EN GALÈRE • CODE • BLOG • VIDÉOS • BONS PLANS •
             </span>
           ))}
         </div>
@@ -60,7 +81,10 @@ export function Header() {
               href={item.href}
               className="hover-line px-4 py-2 text-sm font-medium uppercase tracking-wider text-(--deg-white) transition-colors hover:text-lime"
             >
-              <span className="font-mono text-(--deg-muted) mr-1" aria-hidden="true">
+              <span
+                className="font-mono text-(--deg-muted) mr-1"
+                aria-hidden="true"
+              >
                 0{index + 1}/
               </span>
               {item.label}
@@ -70,7 +94,10 @@ export function Header() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <button className="btn-brutal px-6 py-3 text-sm" aria-label="Collaborer avec DevEnGalère">
+          <button
+            className="btn-brutal px-6 py-3 text-sm"
+            aria-label="Collaborer avec DevEnGalère"
+          >
             Collaborer →
           </button>
         </div>
@@ -102,18 +129,24 @@ export function Header() {
                 onClick={() => setIsOpen(false)}
                 className="border-b border-(--deg-gray-light) hover-line hover:border-lime hover:text-lime px-2 py-4 text-sm font-medium uppercase tracking-wider transition-colors hover:text-lime"
               >
-                <span className="font-mono text-(--deg-muted) mr-2" aria-hidden="true">
+                <span
+                  className="font-mono text-(--deg-muted) mr-2"
+                  aria-hidden="true"
+                >
                   0{index + 1}/
                 </span>
                 {item.label}
               </Link>
             ))}
-            <button className="btn-brutal mt-6 w-full py-4 text-sm" aria-label="Collaborer avec DevEnGalère">
+            <button
+              className="btn-brutal mt-6 w-full py-4 text-sm"
+              aria-label="Collaborer avec DevEnGalère"
+            >
               Collaborer →
             </button>
           </nav>
         </div>
       )}
     </header>
-  )
+  );
 }

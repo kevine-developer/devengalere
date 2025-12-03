@@ -1,10 +1,10 @@
 export const SITE_CONFIG = {
   name: "DevEnGalère",
   description: "Développeur fullstack qui partage son parcours et ses projets",
-  url: "https://devengalere.com",
+  url: "https://devengalere.fr",
   author: {
     name: "DevEnGalère",
-    url: "https://devengalere.com",
+    url: "https://devengalere.fr",
   },
   social: {
     github: "https://github.com/devengalere",
