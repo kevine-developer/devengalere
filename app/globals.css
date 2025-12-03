@@ -1,0 +1,348 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --deg-lime: #c8ff00;
+  --deg-lime-dim: #a3cc00;
+  --deg-black: #0a0a0a;
+  --deg-dark: #111111;
+  --deg-gray: #1a1a1a;
+  --deg-gray-light: #2a2a2a;
+  --deg-white: #fafafa;
+  --deg-muted: #666666;
+
+  --background: var(--deg-black);
+  --foreground: var(--deg-white);
+  --card: var(--deg-dark);
+  --card-foreground: var(--deg-white);
+  --primary: var(--deg-lime);
+  --primary-foreground: var(--deg-black);
+  --secondary: var(--deg-gray);
+  --secondary-foreground: var(--deg-white);
+  --muted: var(--deg-gray);
+  --muted-foreground: var(--deg-muted);
+  --accent: var(--deg-lime);
+  --accent-foreground: var(--deg-black);
+  --border: var(--deg-gray-light);
+  --input: var(--deg-gray);
+  --ring: var(--deg-lime);
+  --radius: 0px;
+}
+
+.dark {
+  --background: var(--deg-black);
+  --foreground: var(--deg-white);
+  --card: var(--deg-dark);
+  --card-foreground: var(--deg-white);
+  --primary: var(--deg-lime);
+  --primary-foreground: var(--deg-black);
+  --secondary: var(--deg-gray);
+  --secondary-foreground: var(--deg-white);
+  --muted: var(--deg-gray);
+  --muted-foreground: var(--deg-muted);
+  --accent: var(--deg-lime);
+  --accent-foreground: var(--deg-black);
+  --border: var(--deg-gray-light);
+  --input: var(--deg-gray);
+  --ring: var(--deg-lime);
+}
+
+@theme inline {
+  --font-sans: "Space Grotesk", "Space Grotesk Fallback", system-ui;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--accent);
+  --color-destructive-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--primary);
+  --color-chart-2: var(--secondary);
+  --color-chart-3: var(--muted);
+  --color-chart-4: var(--accent);
+  --color-chart-5: var(--border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--card);
+  --color-sidebar-foreground: var(--card-foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Noise texture overlay for unique aesthetic */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar - brutalist style */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--deg-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--deg-lime);
+}
+
+/* Unique text utilities */
+.text-lime {
+  color: var(--deg-lime);
+}
+
+.bg-lime {
+  background-color: var(--deg-lime);
+}
+
+.border-lime {
+  border-color: var(--deg-lime);
+}
+
+/* Brutalist highlight effect */
+.highlight {
+  position: relative;
+  display: inline;
+}
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  right: -4px;
+  height: 40%;
+  background: var(--deg-lime);
+  z-index: -1;
+  transform: skewX(-3deg);
+}
+
+/* Glitch text effect */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--deg-lime);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-1 2s infinite linear alternate-reverse;
+}
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #ff0000;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(20px, 9999px, 15px, 0);
+  }
+  25% {
+    clip: rect(40px, 9999px, 60px, 0);
+  }
+  50% {
+    clip: rect(80px, 9999px, 100px, 0);
+  }
+  75% {
+    clip: rect(10px, 9999px, 30px, 0);
+  }
+  100% {
+    clip: rect(50px, 9999px, 70px, 0);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip: rect(65px, 9999px, 85px, 0);
+  }
+  25% {
+    clip: rect(30px, 9999px, 50px, 0);
+  }
+  50% {
+    clip: rect(10px, 9999px, 25px, 0);
+  }
+  75% {
+    clip: rect(70px, 9999px, 90px, 0);
+  }
+  100% {
+    clip: rect(45px, 9999px, 65px, 0);
+  }
+}
+
+/* Scan line effect */
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Brutalist button styles */
+.btn-brutal {
+  position: relative;
+  background: var(--deg-lime);
+  color: var(--deg-black);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--deg-lime);
+  transition: all 0.15s ease;
+}
+.btn-brutal::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: var(--deg-lime);
+  z-index: -1;
+  transition: all 0.15s ease;
+}
+.btn-brutal:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--deg-lime);
+}
+
+.btn-outline-brutal {
+  background: transparent;
+  color: var(--deg-white);
+  border: 2px solid var(--deg-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+}
+.btn-outline-brutal:hover {
+  background: var(--deg-white);
+  color: var(--deg-black);
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 var(--deg-lime);
+}
+
+/* Card with corner cut */
+.card-cut {
+  background: var(--deg-dark);
+  border: 1px solid var(--deg-gray-light);
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+  transition: all 0.2s ease;
+}
+.card-cut:hover {
+  border-color: var(--deg-lime);
+  transform: translateY(-4px);
+}
+
+/* Diagonal stripes */
+.stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    var(--deg-gray) 10px,
+    var(--deg-gray) 11px
+  );
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.cursor-blink::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--deg-lime);
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: linear-gradient(var(--deg-gray-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--deg-gray-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Hover line animation */
+.hover-line {
+  position: relative;
+  overflow: hidden;
+}
+.hover-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--deg-lime);
+  transform: translateX(-101%);
+  transition: transform 0.3s ease;
+}
+.hover-line:hover::after {
+  transform: translateX(0);
+}

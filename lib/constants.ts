@@ -1,0 +1,50 @@
+export const SITE_CONFIG = {
+  name: "DevEnGalère",
+  description: "Développeur fullstack qui partage son parcours et ses projets",
+  url: "https://devengalere.com",
+  author: {
+    name: "DevEnGalère",
+    url: "https://devengalere.com",
+  },
+  social: {
+    github: "https://github.com/devengalere",
+    twitter: "https://twitter.com/devengalere",
+    linkedin: "https://linkedin.com/in/devengalere",
+    youtube: "https://youtube.com/@devengalere",
+  },
+} as const
+
+export const DEAL_TYPES = {
+  promo: "Code Promo",
+  referral: "Parrainage",
+  discount: "Réduction",
+  freebie: "Gratuit",
+  tutorial: "Tutoriel",
+  formation: "Formation",
+} as const
+
+export const DEAL_CATEGORIES = [
+  "Tous",
+  "Hosting",
+  "AI",
+  "Formation",
+  "Design",
+  "Database",
+  "Tools",
+  "Productivity",
+  "Tutorial",
+] as const
+
+export const VIDEO_PLATFORMS = {
+  youtube: "YouTube",
+  tiktok: "TikTok",
+  instagram: "Instagram",
+} as const
+
+export const NAV_LINKS = [
+  { href: "/projets", label: "Projets" },
+  { href: "/blog", label: "Blog" },
+  { href: "/videos", label: "Vidéos" },
+  { href: "/bons-plans", label: "Bons Plans" },
+  { href: "/a-propos", label: "À propos" },
+] as const
