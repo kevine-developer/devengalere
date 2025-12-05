@@ -1,10 +1,10 @@
 export const SITE_CONFIG = {
   name: "DevEnGalère",
   description: "Développeur fullstack qui partage son parcours et ses projets",
-  url: "https://devengalere.fr",
+  url: "https://devengalere.com",
   author: {
     name: "DevEnGalère",
-    url: "https://devengalere.fr",
+    url: "https://devengalere.com",
   },
   social: {
     github: "https://github.com/devengalere",
@@ -43,8 +43,8 @@ export const VIDEO_PLATFORMS = {
 
 export const NAV_LINKS = [
   { href: "/projets", label: "Projets" },
-  { href: "/blog", label: "Blog" },
-  { href: "/videos", label: "Vidéos" },
+  { href: "/contenus", label: "Contenus" },
   { href: "/bons-plans", label: "Bons Plans" },
+  { href: "/communaute", label: "Communauté" },
   { href: "/a-propos", label: "À propos" },
 ] as const

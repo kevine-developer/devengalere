@@ -6,29 +6,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-import {
-  Space_Grotesk,
-  JetBrains_Mono,
-  Inter as Font_Inter,
-  Geist_Mono as Font_Geist_Mono,
-  Source_Serif_4 as Font_Source_Serif_4,
-} from "next/font/google";
-
-const _inter = Font_Inter({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-const _geistMono = Font_Geist_Mono({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-const _sourceSerif_4 = Font_Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -65,6 +43,8 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "TypeScript",
+    "France développeur",
+    "Développeur sur Toulouse",
   ],
   authors: [{ name: "DevEnGalère" }],
   creator: "DevEnGalère",
@@ -109,7 +89,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "v0.app",
+  generator: "",
 };
 
 export const viewport: Viewport = {
@@ -126,9 +106,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="dark">
-      <head>
-        <meta name="apple-mobile-web-app-title" content="DevEnGalere" />
-      </head>
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >

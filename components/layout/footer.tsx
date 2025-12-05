@@ -59,13 +59,7 @@ export function Footer() {
         aria-hidden="true"
       >
         <pre className="text-center font-mono text-xs text-(--deg-muted) leading-none sm:text-sm">
-          {`
-  ____             _____       ____       _           
- |  _ \\  _____   _| ____|_ __ / ___| __ _| | ___ _ __ ___ 
- | | | \\ |_ _ \\ \\ / /  _| | '_ \\ |  _ / _\` | |/ _ \\ '__/ _ \\
- | |_| ||  __/\\ V /| |___| | | | |_| | (_| | |  __/ | |  __/
- |____/ \\___| \\_/ |_____|_| |_| \\____|\\__,_|_|\\___|_|  \\___|
-`}
+          {`  `}
         </pre>
       </div>
 
