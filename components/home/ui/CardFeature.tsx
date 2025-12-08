@@ -19,7 +19,7 @@ function CardFeature({ feature }: { feature: Feature }) {
             >
               {/* Badge count */}
               <span
-                className="absolute right-4 top-4 font-mono text-sm text-(--deg-gray)"
+                className="absolute right-4 top-4 font-mono text-sm text-(--deg-muted)"
                 aria-hidden="true"
               >
                 {feature.count}+ {feature.label}
