@@ -1,15 +1,18 @@
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
-import type { Project } from "@/types"
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import type { Project } from "@/types";
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link href={`/projets/${project.id}`} className="card-cut group relative overflow-hidden">
+    <Link
+      href={`/projets/${project.id}`}
+      className="card-cut group relative overflow-hidden"
+    >
       {/* Image */}
       <div className="relative aspect-video overflow-hidden">
         <Image
@@ -21,7 +24,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="absolute inset-0 bg-linear-to-t from-(--deg-dark) via-transparent to-transparent" />
 
         {/* Project number overlay */}
-        <span className="absolute left-4 top-4 font-mono text-6xl font-bold text-white/10">#{project.id}</span>
+        <span className="absolute left-4 top-4 font-mono text-6xl font-bold text-white/10">
+          #{project.id}
+        </span>
       </div>
 
       {/* Content */}
@@ -33,7 +38,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <ArrowUpRight className="h-5 w-5 text-(--deg-muted) transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-lime" />
         </div>
 
-        <p className="mb-4 font-mono text-xs text-(--deg-muted) line-clamp-2">{project.description}</p>
+        <p className="mb-4 font-mono text-xs text-(--deg-muted) line-clamp-2">
+          {project.description}
+        </p>
 
         {/* Stack */}
         <div className="flex flex-wrap gap-2">
@@ -56,5 +63,5 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Bottom accent line */}
       <div className="absolute bottom-0 left-0 h-1 w-0 bg-lime transition-all duration-300 group-hover:w-full" />
     </Link>
-  )
+  );
 }
