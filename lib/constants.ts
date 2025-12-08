@@ -1,16 +1,20 @@
 export const SITE_CONFIG = {
   name: "DevEnGalère",
   description: "Développeur fullstack qui partage son parcours et ses projets",
-  url: "https://devengalere.com",
+  url: "https://devengalere.fr",
   author: {
     name: "DevEnGalère",
-    url: "https://devengalere.com",
+    url: "https://devengalere.fr",
   },
   social: {
-    github: "https://github.com/devengalere",
+    github: "https://github.com/kevine-developer",
     twitter: "https://twitter.com/devengalere",
-    linkedin: "https://linkedin.com/in/devengalere",
+    linkedin: "https://linkedin.com/in/yvesnarsonkevine",
     youtube: "https://youtube.com/@devengalere",
+    instagram: "https://instagram.com/dev_en_galere",
+    medium: "https://medium.com/@devengalere",
+    tiktok: "https://tiktok.com/@dev_en_galere",
+    
   },
 } as const
 
