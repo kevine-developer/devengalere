@@ -7,28 +7,38 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CtaSection from "./components/CtaSection";
 import StorySection from "./components/StorySection";
+import { SITE_CONFIG } from "@/lib/constants";
+import { InstagramIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "À propos | DevEnGalère",
   description: "Découvre l'histoire et la mission de DevEnGalère.",
+  keywords: [
+    "DevEnGalère",
+    "Développeur",
+    "Authenticité",
+    "Collaboration",
+    "YVES narson kevine",
+  ],
 };
 
 const dataSocial = [
   {
     icon: GithubIcon,
-    href: "https://github.com/devengalere",
+    href: SITE_CONFIG.social.github,
     label: "GitHub",
   },
   {
-    icon: TwitterIcon,
-    href: "https://twitter.com/devengalere",
-    label: "X",
+    icon: InstagramIcon,
+    href: SITE_CONFIG.social.instagram,
+    label: "Instagram",
   },
   {
     icon: LinkedinIcon,
-    href: "https://linkedin.com/in/yvesnarsonkevine",
+    href: SITE_CONFIG.social.linkedin,
     label: "LinkedIn",
-  },
+  }
+
 ];
 
 const dataValue = [
