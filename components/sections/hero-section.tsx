@@ -79,10 +79,10 @@ export function HeroSection() {
           aria-label="Statistiques"
         >
           {[
-            { value: "15+", label: "Projets" },
+            { value: "2+", label: "Projets" },
             { value: "50+", label: "Articles" },
-            { value: "100+", label: "Vidéos" },
-            { value: "10K+", label: "Followers" },
+            { value: "30+", label: "Bons plans" },
+            { value: "100+", label: "Followers" },
           ].map((stat, index) => (
             <div
               key={stat.label}
