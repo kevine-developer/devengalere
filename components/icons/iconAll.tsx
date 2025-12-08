@@ -103,6 +103,13 @@ function LinkedinIcon() {
   );
 }
 
-
-
-export { TerminalIcon, CodeIcon, ArticleIcon, PlayIcon, GiftIcon, GithubIcon, TwitterIcon, LinkedinIcon };
+export {
+  TerminalIcon,
+  CodeIcon,
+  ArticleIcon,
+  PlayIcon,
+  GiftIcon,
+  GithubIcon,
+  TwitterIcon,
+  LinkedinIcon,
+};
