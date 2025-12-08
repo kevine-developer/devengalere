@@ -79,7 +79,7 @@ export function HeroSection() {
           aria-label="Statistiques"
         >
           {[
-            { value: "2+", label: "Projets" },
+            { value: "3+", label: "Projets" },
             { value: "50+", label: "Articles" },
             { value: "30+", label: "Bons plans" },
             { value: "100+", label: "Followers" },

@@ -89,7 +89,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "",
+ icons: {
+    icon: "/favicon-for-public/web-app-manifest-192x192.png",
+    shortcut: "/favicon-for-public/web-app-manifest-192x192.png",
+    apple: "/favicon-for-public/web-app-manifest-192x192.png",
+    
+  },
 };
 
 export const viewport: Viewport = {
