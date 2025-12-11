@@ -37,8 +37,7 @@ const dataSocial = [
     icon: LinkedinIcon,
     href: SITE_CONFIG.social.linkedin,
     label: "LinkedIn",
-  }
-
+  },
 ];
 
 const dataValue = [
@@ -73,12 +72,12 @@ export default function AboutPage() {
           <div className="flex flex-col items-center text-center">
             {/* Avatar */}
             <div className="relative mb-8">
-              <div className="h-32 w-32 overflow-hidden border-4 border-lime bg-(--deg-gray)">
+              <div className="overflow-hidden ">
                 <Image
-                  src="https://res.cloudinary.com/dhe585mze/image/upload/v1765019971/logo._td5d5y.png?height=128&width=128"
+                  src="https://res.cloudinary.com/dhe585mze/image/upload/v1765398484/dark_devengalere-g_nelrwh.png"
                   alt="DevEnGalère"
-                  width={128}
-                  height={128}
+                  width={150}
+                  height={150}
                   className="object-cover"
                 />
               </div>

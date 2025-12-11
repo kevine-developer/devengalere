@@ -10,9 +10,9 @@ export const SITE_CONFIG = {
     github: "https://github.com/kevine-developer",
     twitter: "https://twitter.com/devengalere",
     linkedin: "https://linkedin.com/in/yvesnarsonkevine",
-    youtube: "https://youtube.com/@devengalere",
+    youtube: "https://youtube.com/@dev-engalere",
     instagram: "https://instagram.com/dev_en_galere",
-    medium: "https://medium.com/@devengalere",
+    medium: "https://medium.com/@dev_en_galere",
     tiktok: "https://tiktok.com/@dev_en_galere",
     
   },

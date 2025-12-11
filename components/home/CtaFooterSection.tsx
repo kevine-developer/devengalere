@@ -3,24 +3,24 @@ import { TerminalIcon } from "lucide-react";
 function CtaFooterSection() {
   return (
     <section
-      className="px-4 py-24 sm:px-6 lg:px-8"
+      className="px-4 py-14 sm:px-6 lg:px-8"
       aria-labelledby="cta-heading"
     >
       <div className="mx-auto max-w-4xl">
         <div className="relative overflow-hidden border-2 border-lime bg-linear-gradient-to-br from-[--deg-dark] to-black p-12 sm:p-20">
           {/* Decorative elements */}
           <div
-            className="absolute -right-8 -top-8 h-32 w-32 border-2 border-lime/20"
+            className="absolute -right-8 -top-8 h-22 w-22 border-2 border-lime/20"
             aria-hidden="true"
           />
           <div
-            className="absolute -bottom-8 -left-8 h-32 w-32 border-2 border-lime/20"
+            className="absolute -bottom-8 -left-8 h-22 w-22 border-2 border-lime/20"
             aria-hidden="true"
           />
 
           <div className="relative text-center">
             <div
-              className="mx-auto mb-8 inline-flex border-2 border-lime bg-lime/10 p-5 text-lime"
+              className="mx-auto mb-8 inline-flex border-2 border-lime bg-lime/10 p-4 text-lime"
               aria-hidden="true"
             >
               <TerminalIcon />

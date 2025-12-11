@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+import Banner from "./ui/Banner";
+import Image from "next/image";
 
 const LogoIcon = () => {
   return (
@@ -40,21 +42,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-(--deg-gray-light) bg-(--deg-black)/95 backdrop-blur-sm">
-      <div
-        className="overflow-hidden border-b border-(--deg-gray-light) bg-(--deg-lime) py-1"
-        aria-hidden="true"
-      >
-        <div className="animate-marquee flex whitespace-nowrap">
-          {[...Array(10)].map((_, i) => (
-            <span
-              key={i}
-              className="mx-8 text-xs font-bold uppercase tracking-wider text-(--deg-black)"
-            >
-              DEV EN GALÈRE • CODE • BLOG • VIDÉOS • BONS PLANS •
-            </span>
-          ))}
-        </div>
-      </div>
+      <Banner />
 
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
@@ -62,7 +50,14 @@ export function Header() {
       >
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <LogoIcon />
+          <div>
+            <Image
+              src="https://res.cloudinary.com/dhe585mze/image/upload/v1765398368/dark_devengalere_test_gkrcph.png"
+              alt="Logo"
+              width={50}
+              height={50}
+            />
+          </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold uppercase tracking-tight leading-none text-(--deg-white)">
               Dev<span className="text-lime">EnGalère</span>
