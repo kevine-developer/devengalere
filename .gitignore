@@ -5,6 +5,8 @@ node_modules/
 /.next/
 /out/
 .swc/
+.vercel/
+
 
 # Fichiers de variables d'environnement (locales et sensibles)
 .env
