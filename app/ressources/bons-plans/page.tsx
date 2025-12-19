@@ -1,6 +1,6 @@
-
-import type { Metadata } from "next"
 import BonsPlansClientPage from "./client-page"
+import type { Metadata } from "next"
+import { Breadcrumb } from "@/components/common/Breadcrumb"
 
 export const metadata: Metadata = {
   title: "Bons Plans & Codes Promos",
@@ -23,5 +23,12 @@ export const metadata: Metadata = {
 }
 
 export default function BonsPlansPage() {
-  return <BonsPlansClientPage />
+  return (
+    <>
+      <Breadcrumb
+        items={[{ label: "Accueil", href: "/" }, { label: "Ressources", href: "/ressources" }, { label: "Bons Plans" }]}
+      />
+      <BonsPlansClientPage />
+    </>
+  )
 }

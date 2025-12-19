@@ -11,6 +11,8 @@ import ProjectSections from "@/components/home/ProjectSections";
 import BlogSections from "@/components/home/BlogSections";
 import VideosSections from "@/components/home/VideosSections";
 import DealsSections from "@/components/home/DealsSections";
+import CommunitySections from "@/components/home/CommunitySections";
+import { featuredCommunities } from "@/lib/data/communities";
 
 export default function HomePage() {
   return (
@@ -108,8 +110,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <HeroSection />
       {/* Features Section */}
-      <FeatureSection />
-
+     {/*  <FeatureSection />
+ */}
       {/* Projects Sections */}
       <ProjectSections featuredProjects={featuredProjects} />
 
@@ -117,10 +119,12 @@ export default function HomePage() {
       <BlogSections recentArticles={recentArticles} />
 
       {/* Videos Sections */}
-      <VideosSections latestVideos={latestVideos}/>
- 
+      <VideosSections latestVideos={latestVideos} />
+
       {/* Deals Sections */}
-      <DealsSections featuredDeals={featuredDeals}/>
+      <DealsSections featuredDeals={featuredDeals} />
+      {/* Community Sections */}
+      <CommunitySections featuredCommunities={featuredCommunities} />
 
       {/* CTA */}
       <CtaFooterSection />

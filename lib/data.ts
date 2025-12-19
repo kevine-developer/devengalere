@@ -53,6 +53,62 @@ export interface Deal {
   userCount?: string
 }
 
+export interface Podcast {
+  id: string
+  title: string
+  description: string
+  platform: "spotify" | "apple" | "youtube" | "deezer"
+  thumbnail: string
+  url: string
+  episodes: number
+  category: string
+  host: string
+  featured: boolean
+  longDescription: string
+  socials: {
+    twitter?: string
+    instagram?: string
+    website?: string
+    youtube?: string
+  }
+}
+
+export interface Live {
+  id: string
+  title: string
+  description: string
+  platform: "twitch" | "youtube" | "tiktok" | "instagram"
+  thumbnail: string
+  channelUrl: string
+  subscriberCount: string
+  featured: boolean
+  schedule?: string
+  longDescription: string
+  socials: {
+    twitch?: string
+    twitter?: string
+    discord?: string
+    youtube?: string
+    tiktok?: string
+    instagram?: string
+  }
+}
+
+export interface Community {
+  id: string
+  name: string
+  description: string
+  platform: "discord" | "twitter" | "linkedin" | "github" | "telegram"
+  memberCount: string
+  url: string
+  icon: string
+  featured: boolean
+  category: string
+  longDescription: string
+  benefits: string[]
+  rules?: string[]
+}
+
 export const featuredDeals: Deal[] = [
   {
     id: "vercel-pro",
@@ -97,7 +153,7 @@ export const featuredDeals: Deal[] = [
     discount: "40%",
     company: "DevEnGalère Academy",
     logo: "/placeholder.svg?height=100&width=100",
-    url: "https://academy.devengalere.fr/nextjs",
+    url: "https://academy.devengalere.com/nextjs",
     expiryDate: "2024-08-31",
     featured: true,
     category: "Formation",
@@ -160,7 +216,7 @@ export const featuredDeals: Deal[] = [
     type: "tutorial",
     company: "DevEnGalère",
     logo: "/placeholder.svg?height=100&width=100",
-    url: "https://devengalere.fr/typescript-advanced",
+    url: "https://devengalere.com/typescript-advanced",
     featured: true,
     category: "Tutorial",
     rating: 4.9,
@@ -235,7 +291,7 @@ export const featuredDeals: Deal[] = [
     type: "tutorial",
     company: "DevEnGalère",
     logo: "/placeholder.svg?height=100&width=100",
-    url: "https://devengalere.fr/react-patterns",
+    url: "https://devengalere.com/react-patterns",
     featured: false,
     category: "Tutorial",
     rating: 4.7,
@@ -246,51 +302,89 @@ export const featuredDeals: Deal[] = [
 
 export const featuredProjects: Project[] = [
   {
-    id: "terms-decoded",
-    title: "J'ai Lu Les CGU",
-    description: "Une mini-application qui reformule le jargon juridique en langage simple, sarcastique ou orienté développeur.",
+    id: "devflow",
+    title: "DevFlow",
+    description: "CLI pour automatiser les workflows de développement",
     longDescription:
-      "Une mini-application qui reformule le jargon juridique en langage simple, sarcastique ou orienté développeur. Un outil de DevEnGalère pour enfin comprendre ce que vous signez.",
-    image: "https://res.cloudinary.com/dhe585mze/image/upload/v1765208846/Capture_d_%C3%A9cran_2025-12-08_164642_o8v8ml.png?height=400&width=600",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Radix UI"],
-    github: "https://github.com/kevine-developer/terms--decoded",
-    demo: "https://terms-decoded.vercel.app/",
+      "Un outil en ligne de commande puissant pour automatiser les tâches répétitives du développement quotidien. DevFlow simplifie la gestion des branches, les déploiements et la génération de code.",
+    image: "/placeholder.svg?height=400&width=600",
+    stack: ["Rust", "TypeScript", "Node.js"],
+    github: "https://github.com/devengalere/devflow",
+    demo: "https://devflow.dev",
     featured: true,
     date: "2024-01",
     objectives: [
+      "Réduire le temps passé sur les tâches répétitives",
+      "Standardiser les workflows entre équipes",
+      "Offrir une expérience développeur fluide",
     ],
-    screenshots: ["https://res.cloudinary.com/dhe585mze/image/upload/v1765208846/Capture_d_%C3%A9cran_2025-12-08_164642_o8v8ml.png?height=600&width=1000", "https://res.cloudinary.com/dhe585mze/image/upload/v1765208846/Capture_d_%C3%A9cran_2025-12-08_164642_o8v8ml.png?height=600&width=1000"],
+    screenshots: ["/placeholder.svg?height=600&width=1000", "/placeholder.svg?height=600&width=1000"],
   },
   {
-    id: "auto-sort-download",
-    title: "Auto Sort Download",
-    description: "Une mini-application qui permet de trier automatiquement les fichiers téléchargés en fonction de leur extension.",
+    id: "galere-ui",
+    title: "Galère UI",
+    description: "Bibliothèque de composants React minimaliste",
     longDescription:
-      "Classe automatiquement les fichiers téléchargés par type avec une interface moderne et des options avancées. Cette extension permet de classer automatiquement les fichiers téléchargés en fonction de leur type. Elle organise les fichiers dans des sous-dossiers spécifiques pour aider l'utilisateur à garder un dossier de téléchargements propre et structuré, sans intervention manuelle. ",
-    image: "https://res.cloudinary.com/dhe585mze/image/upload/v1765209950/Capture_d_%C3%A9cran_2025-12-08_170538_vqzmfk.png?height=400&width=600",
-    stack: ["Chrome Extension", "TypeScript", "CSS", "HTML"],
-    github: "https://github.com/kevine-developer/autoSortDownload",
-    demo: "https://chromewebstore.google.com/detail/triauto-des-t%C3%A9l%C3%A9chargemen/omaihkelicmjipffchplcnmdbeebgloa?authuser=0&hl=fr",
+      "Une collection de composants React accessibles, stylés avec Tailwind CSS. Conçue pour les développeurs qui veulent aller vite sans sacrifier la qualité.",
+    image: "/placeholder.svg?height=400&width=600",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Radix UI"],
+    github: "https://github.com/devengalere/galere-ui",
+    demo: "https://galere-ui.dev",
     featured: true,
     date: "2024-02",
     objectives: [
+      "Accessibilité native sur tous les composants",
+      "Performance optimisée",
+      "Documentation complète avec exemples",
     ],
-    screenshots: ["https://res.cloudinary.com/dhe585mze/image/upload/v1765209782/Capture_d_%C3%A9cran_2025-12-08_170229_etw7xx.png?height=600&width=1000", "https://res.cloudinary.com/dhe585mze/image/upload/v1765209782/Capture_d_%C3%A9cran_2025-12-08_170229_etw7xx.png?height=600&width=1000"],
+    screenshots: ["/placeholder.svg?height=600&width=1000", "/placeholder.svg?height=600&width=1000"],
   },
   {
-    id: "api-institution-map",
-    title: "API et Apps Web Institution Map",
-    description: "Application web pour visualiser les API et leurs appels",
+    id: "api-guardian",
+    title: "API Guardian",
+    description: "Monitoring et alerting pour APIs REST",
     longDescription:
-      "Une application web interactive conçue pour localiser, rechercher et visualiser les institutions publiques de Madagascar sur une carte dynamique. De plus, elle permet de visualiser les appels API effectués par les institutions. ",
-    image: "https://res.cloudinary.com/dhe585mze/image/upload/v1765210652/Capture_d_%C3%A9cran_2025-12-08_171715_l4sirx.png?height=400&width=600",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Leaflet"],
-    github: "https://github.com/kevine-developer/institution-map",
+      "Solution complète de monitoring pour vos APIs. Détectez les anomalies, configurez des alertes et visualisez les performances en temps réel.",
+    image: "/placeholder.svg?height=400&width=600",
+    stack: ["Go", "PostgreSQL", "Redis", "React"],
+    github: "https://github.com/devengalere/api-guardian",
     featured: true,
-    date: "2025-12",
+    date: "2024-03",
     objectives: ["Monitoring en temps réel", "Alertes configurables", "Tableau de bord intuitif"],
-    screenshots: ["https://res.cloudinary.com/dhe585mze/image/upload/v1765210652/Capture_d_%C3%A9cran_2025-12-08_171715_l4sirx.png?height=600&width=1000", "https://res.cloudinary.com/dhe585mze/image/upload/v1765210652/Capture_d_%C3%A9cran_2025-12-08_171715_l4sirx.png?height=600&width=1000"],
-  }
+    screenshots: ["/placeholder.svg?height=600&width=1000", "/placeholder.svg?height=600&width=1000"],
+  },
+  {
+    id: "code-review-bot",
+    title: "Code Review Bot",
+    description: "Assistant IA pour les revues de code GitHub",
+    longDescription:
+      "Un bot GitHub qui analyse automatiquement vos pull requests et suggère des améliorations. Utilise l'IA pour détecter les patterns problématiques.",
+    image: "/placeholder.svg?height=400&width=600",
+    stack: ["Python", "OpenAI", "GitHub Actions"],
+    github: "https://github.com/devengalere/code-review-bot",
+    featured: false,
+    date: "2023-12",
+    objectives: [
+      "Automatiser les revues de code basiques",
+      "Détecter les failles de sécurité",
+      "Suggérer des refactorings",
+    ],
+    screenshots: [],
+  },
+  {
+    id: "deploy-ninja",
+    title: "Deploy Ninja",
+    description: "Déploiement zero-downtime simplifié",
+    longDescription:
+      "Simplifiez vos déploiements avec des stratégies blue-green et canary. Compatible avec Kubernetes et Docker Swarm.",
+    image: "/placeholder.svg?height=400&width=600",
+    stack: ["Go", "Kubernetes", "Docker"],
+    github: "https://github.com/devengalere/deploy-ninja",
+    featured: false,
+    date: "2023-11",
+    objectives: ["Zero downtime garanti", "Rollback automatique", "Support multi-cloud"],
+    screenshots: [],
+  },
 ]
 
 export const recentArticles: Article[] = [
@@ -420,5 +514,261 @@ export const latestVideos: Video[] = [
     url: "https://tiktok.com/@devengalere/video/789",
     views: "92K",
     date: "2024-03-04",
+  },
+]
+
+export const featuredPodcasts: Podcast[] = [
+  {
+    id: "1",
+    title: "Code & Coffee",
+    description:
+      "Discussions décontractées sur le développement web moderne, les frameworks JavaScript et les meilleures pratiques.",
+    longDescription:
+      "Code & Coffee est le podcast incontournable pour tous les développeurs web qui veulent rester à jour. Chaque épisode explore en profondeur les technologies modernes, les frameworks populaires comme React, Vue, et Next.js, et partage des conseils pratiques pour améliorer votre code. Rejoignez-nous pour des discussions authentiques autour d'un café virtuel !",
+    platform: "spotify",
+    thumbnail: "/placeholder.svg?height=400&width=400",
+    url: "https://open.spotify.com/show/example1",
+    episodes: 45,
+    category: "Dev Web",
+    host: "DevEnGalère",
+    featured: true,
+    socials: {
+      twitter: "https://twitter.com/codecoffee",
+      instagram: "https://instagram.com/codecoffee",
+      website: "https://codecoffee.dev",
+    },
+  },
+  {
+    id: "2",
+    title: "Debug Session",
+    description: "Résolution de bugs en direct et astuces pour débugger comme un pro.",
+    longDescription:
+      "Debug Session vous emmène dans les coulisses du débogage professionnel. Apprenez les techniques avancées de debugging, les outils indispensables, et comment résoudre les bugs les plus complexes. Chaque épisode inclut des sessions de debugging en direct avec de vrais projets.",
+    platform: "youtube",
+    thumbnail: "/placeholder.svg?height=400&width=400",
+    url: "https://youtube.com/podcast-example",
+    episodes: 30,
+    category: "Debugging",
+    host: "DevEnGalère",
+    featured: true,
+    socials: {
+      youtube: "https://youtube.com/@debugsession",
+      twitter: "https://twitter.com/debugsession",
+    },
+  },
+  {
+    id: "3",
+    title: "Tech Talk FR",
+    description: "L'actualité tech française et internationale analysée chaque semaine.",
+    longDescription:
+      "Tech Talk FR est votre rendez-vous hebdomadaire pour comprendre l'actualité technologique. Nous analysons les dernières sorties, les tendances du marché, les nouveaux frameworks, et discutons de l'impact de la tech sur notre société.",
+    platform: "apple",
+    thumbnail: "/placeholder.svg?height=400&width=400",
+    url: "https://podcasts.apple.com/podcast-example",
+    episodes: 67,
+    category: "Actualité Tech",
+    host: "DevEnGalère",
+    featured: true,
+    socials: {
+      twitter: "https://twitter.com/techtalkfr",
+      website: "https://techtalk.fr",
+    },
+  },
+  {
+    id: "4",
+    title: "Side Project Stories",
+    description: "Interviews de développeurs qui ont réussi avec leurs projets perso.",
+    longDescription:
+      "Side Project Stories partage les histoires inspirantes de développeurs qui ont transformé leurs projets personnels en succès. Découvrez leurs parcours, leurs défis, et comment ils ont construit leurs produits tout en gardant un job à temps plein.",
+    platform: "spotify",
+    thumbnail: "/placeholder.svg?height=400&width=400",
+    url: "https://open.spotify.com/show/example2",
+    episodes: 22,
+    category: "Entrepreneuriat",
+    host: "DevEnGalère",
+    featured: false,
+    socials: {
+      twitter: "https://twitter.com/sideprojectstories",
+      instagram: "https://instagram.com/sideprojectstories",
+    },
+  },
+]
+
+export const featuredLives: Live[] = [
+  {
+    id: "1",
+    title: "Live Coding Sessions",
+    description: "Développement en direct de projets web, réponses à vos questions et debug collectif.",
+    longDescription:
+      "Rejoignez-moi sur Twitch pour des sessions de live coding où nous construisons de vrais projets ensemble. Que vous soyez débutant ou confirmé, vous apprendrez en regardant mon processus de développement, mes erreurs, et comment je les résous. C'est aussi l'occasion de poser vos questions en direct et d'interagir avec une communauté passionnée.",
+    platform: "twitch",
+    thumbnail: "/placeholder.svg?height=400&width=600",
+    channelUrl: "https://twitch.tv/devengalere",
+    subscriberCount: "12.5K",
+    featured: true,
+    schedule: "Mardi & Jeudi 20h",
+    socials: {
+      twitch: "https://twitch.tv/devengalere",
+      twitter: "https://twitter.com/devengalere",
+      discord: "https://discord.gg/devengalere",
+      youtube: "https://youtube.com/@devengalere",
+    },
+  },
+  {
+    id: "2",
+    title: "YouTube Live Tech",
+    description: "Tutoriels en direct, Q&A et découverte de nouvelles technologies.",
+    longDescription:
+      "Chaque dimanche, je fais des lives YouTube pour explorer de nouvelles technologies, créer des tutoriels interactifs, et répondre à toutes vos questions. C'est le moment idéal pour apprendre en direct et échanger avec la communauté. Les replays sont disponibles sur la chaîne.",
+    platform: "youtube",
+    thumbnail: "/placeholder.svg?height=400&width=600",
+    channelUrl: "https://youtube.com/@devengalere",
+    subscriberCount: "25.3K",
+    featured: true,
+    schedule: "Dimanche 18h",
+    socials: {
+      youtube: "https://youtube.com/@devengalere",
+      twitter: "https://twitter.com/devengalere",
+      instagram: "https://instagram.com/devengalere",
+    },
+  },
+  {
+    id: "3",
+    title: "TikTok Code Tips",
+    description: "Astuces de code courtes et efficaces, tips et démonstrations rapides.",
+    longDescription:
+      "Sur TikTok, je partage des astuces de code en format court, des tips rapides, et des démonstrations de concepts techniques. Parfait pour apprendre pendant une pause ou découvrir de nouvelles techniques en quelques secondes. Suivez-moi pour du contenu quotidien !",
+    platform: "tiktok",
+    thumbnail: "/placeholder.svg?height=400&width=600",
+    channelUrl: "https://tiktok.com/@devengalere",
+    subscriberCount: "45K",
+    featured: true,
+    socials: {
+      tiktok: "https://tiktok.com/@devengalere",
+      instagram: "https://instagram.com/devengalere",
+      youtube: "https://youtube.com/@devengalere",
+    },
+  },
+  {
+    id: "4",
+    title: "Instagram Dev Stories",
+    description: "Snippets de code, behind the scenes et astuces quotidiennes.",
+    longDescription:
+      "Sur Instagram, je partage mon quotidien de développeur, des snippets de code, des carrousels éducatifs, et des stories avec des astuces du jour. C'est un mélange de technique et de lifestyle dev, parfait pour s'inspirer et apprendre de manière décontractée.",
+    platform: "instagram",
+    thumbnail: "/placeholder.svg?height=400&width=600",
+    channelUrl: "https://instagram.com/devengalere",
+    subscriberCount: "18.7K",
+    featured: false,
+    socials: {
+      instagram: "https://instagram.com/devengalere",
+      tiktok: "https://tiktok.com/@devengalere",
+      twitter: "https://twitter.com/devengalere",
+    },
+  },
+]
+
+export const featuredCommunities: Community[] = [
+  {
+    id: "1",
+    name: "DevEnGalère Discord",
+    description: "La communauté principale pour échanger, s'entraider et partager des ressources.",
+    longDescription:
+      "Rejoignez notre Discord, le cœur battant de la communauté DevEnGalère ! Plus de 5000 développeurs s'entraident quotidiennement, partagent leurs projets, et discutent des dernières technologies. C'est l'endroit parfait pour poser vos questions, trouver des partenaires de projet, et progresser ensemble.",
+    platform: "discord",
+    memberCount: "5.2K",
+    url: "https://discord.gg/devengalere",
+    icon: "/placeholder.svg?height=100&width=100",
+    featured: true,
+    category: "Communauté",
+    benefits: [
+      "Aide technique 24/7",
+      "Channels spécialisés par techno",
+      "Code reviews et feedback",
+      "Événements et challenges",
+      "Ressources exclusives",
+      "Networking avec d'autres devs",
+    ],
+    rules: [
+      "Respectez les autres membres",
+      "Pas de spam ou auto-promotion excessive",
+      "Utilisez les bons channels",
+      "Partagez vos connaissances",
+      "Soyez constructif dans vos critiques",
+    ],
+  },
+  {
+    id: "2",
+    name: "Twitter Tech FR",
+    description: "Suis-moi pour des tips quotidiens, des threads techniques et l'actualité dev.",
+    longDescription:
+      "Sur Twitter, je partage quotidiennement des tips de code, des threads techniques approfondis, et je commente l'actualité tech. C'est aussi là que j'annonce mes nouveaux contenus et que j'échange directement avec vous. Rejoignez une communauté active et engagée !",
+    platform: "twitter",
+    memberCount: "8.9K",
+    url: "https://twitter.com/devengalere",
+    icon: "/placeholder.svg?height=100&width=100",
+    featured: true,
+    category: "Social",
+    benefits: [
+      "Tips quotidiens",
+      "Threads techniques détaillés",
+      "Actualité tech en temps réel",
+      "Échanges directs",
+      "Annonces exclusives",
+    ],
+  },
+  {
+    id: "3",
+    name: "LinkedIn Pro Network",
+    description: "Réseau professionnel, opportunités de carrière et contenu tech B2B.",
+    longDescription:
+      "Mon LinkedIn est dédié au contenu professionnel : articles sur le développement logiciel, conseils de carrière, retours d'expérience, et opportunités professionnelles. Connectons-nous pour développer votre réseau et accéder à du contenu exclusif orienté carrière.",
+    platform: "linkedin",
+    memberCount: "12.3K",
+    url: "https://linkedin.com/in/devengalere",
+    icon: "/placeholder.svg?height=100&width=100",
+    featured: true,
+    category: "Professionnel",
+    benefits: [
+      "Conseils carrière",
+      "Opportunités professionnelles",
+      "Contenu B2B de qualité",
+      "Networking professionnel",
+      "Articles approfondis",
+    ],
+  },
+  {
+    id: "4",
+    name: "GitHub Open Source",
+    description: "Tous mes projets open source, contribue et star les repos qui t'intéressent.",
+    longDescription:
+      "Explorez tous mes projets open source sur GitHub ! Vous y trouverez des outils, des bibliothèques, des templates, et des projets complets. N'hésitez pas à contribuer, signaler des bugs, ou simplement star les repos qui vous plaisent. La collaboration open source est au cœur de ma philosophie.",
+    platform: "github",
+    memberCount: "3.4K",
+    url: "https://github.com/devengalere",
+    icon: "/placeholder.svg?height=100&width=100",
+    featured: true,
+    category: "Code",
+    benefits: [
+      "Projets open source gratuits",
+      "Code de qualité production",
+      "Documentation complète",
+      "Contributions bienvenues",
+      "Templates et starters",
+    ],
+  },
+  {
+    id: "5",
+    name: "Telegram Dev Group",
+    description: "Groupe de discussion instantanée pour les questions rapides et l'actualité.",
+    longDescription:
+      "Le groupe Telegram est parfait pour les discussions rapides, les questions urgentes, et partager des liens intéressants. C'est un espace plus décontracté que Discord, idéal pour rester connecté avec la communauté tout au long de la journée.",
+    platform: "telegram",
+    memberCount: "2.1K",
+    url: "https://t.me/devengalere",
+    icon: "/placeholder.svg?height=100&width=100",
+    featured: false,
+    category: "Messagerie",
+    benefits: ["Réponses rapides", "Discussions instantanées", "Partage de liens", "Communauté active"],
   },
 ]

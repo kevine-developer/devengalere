@@ -53,5 +53,64 @@ export interface Deal {
   userCount?: string
 }
 
+export interface Podcast {
+  id: string
+  title: string
+  description: string
+  longDescription?: string
+  platform: "spotify" | "apple" | "youtube" | "deezer"
+  thumbnail: string
+  url: string
+  episodes: number
+  category: string
+  host: string
+  featured: boolean
+  socials?: {
+    twitter?: string
+    instagram?: string
+    website?: string
+    youtube?: string
+  }
+}
+
+export interface Live {
+  id: string
+  title: string
+  description: string
+  longDescription?: string
+  platform: "twitch" | "youtube" | "tiktok" | "instagram"
+  thumbnail: string
+  channelUrl: string
+  subscriberCount: string
+  featured: boolean
+  schedule?: string
+  socials?: {
+    twitter?: string
+    instagram?: string
+    discord?: string
+    youtube?: string
+    twitch?: string
+    tiktok?: string
+  }
+}
+
+export interface Community {
+  id: string
+  name: string
+  description: string
+  longDescription?: string
+  platform: "discord" | "twitter" | "linkedin" | "github" | "telegram"
+  memberCount: string
+  url: string
+  icon: string
+  featured: boolean
+  category: string
+  benefits?: string[]
+  rules?: string[]
+}
+
 export type DealType = Deal["type"]
 export type VideoPlatform = Video["platform"]
+export type PodcastPlatform = Podcast["platform"]
+export type LivePlatform = Live["platform"]
+export type CommunityPlatform = Community["platform"]
