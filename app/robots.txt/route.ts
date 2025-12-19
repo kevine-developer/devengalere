@@ -5,6 +5,7 @@ Disallow: /private/
 
 
 
+
 Sitemap: https://devengalere.fr/sitemap.xml`
 
   return new Response(robots, {
@@ -13,6 +14,8 @@ Sitemap: https://devengalere.fr/sitemap.xml`
       "Content-Length": String(robots.length),
       "Cache-Control": "public, max-age=86400",
     },
-    status: 200,    
+    status: 200,  
+
   })
+
 }

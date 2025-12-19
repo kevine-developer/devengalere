@@ -17,7 +17,10 @@ export function proxy(request: NextRequest) {
     pathname.startsWith("/_next/") ||
     pathname.startsWith("/favicon") ||
     pathname.startsWith("/robots") ||
-    pathname.startsWith("/sitemap")
+    pathname.startsWith("/sitemap") ||
+    pathname.startsWith("/conditions-utilisation") ||
+    pathname.startsWith("/mentions-legales") ||
+    pathname.startsWith("/politique-confidentialite")
   ) {
     return NextResponse.next();
   }
