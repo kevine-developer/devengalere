@@ -10,33 +10,32 @@ export default function ComingSoon() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsLoading(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-  try {
-    const res = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        wantsEarlyAccess,
-      }),
-    });
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          wantsEarlyAccess,
+        }),
+      });
 
-    if (!res.ok) throw new Error("Erreur serveur");
+      if (!res.ok) throw new Error("Erreur serveur");
 
-    setIsSubmitted(true);
-    setEmail("");
-  } catch (error) {
-    console.error(error);
-  } finally {
-    setIsLoading(false);
-  }
-};
-
+      setIsSubmitted(true);
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <main className="relative flex flex-col items-center justify-center overflow-hidden px-4 py-8">
@@ -114,7 +113,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                   {/* CHECKBOX ACCÈS ANTICIPÉ */}
                   <label className="flex cursor-pointer items-start gap-3 group">
-                    <div className="relative flex h-5 w-5 shrink-0 items-center justify-center border border-lime/40 bg-[--deg-black] transition-colors group-hover:border-lime">
+                    <div className="relative flex h-5 w-5 shrink-0 items-center justify-center border  border-lime transition-colors ">
                       <input
                         type="checkbox"
                         className="peer sr-only"
@@ -122,7 +121,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         onChange={(e) => setWantsEarlyAccess(e.target.checked)}
                       />
                       <Check
-                        className={`h-3.5 w-3.5 text-lime transition-opacity ${
+                        className={`h-3.5 w-3.5 text-lime transition-opacity border-lime border-2  ${
                           wantsEarlyAccess ? "opacity-100" : "opacity-0"
                         }`}
                       />
