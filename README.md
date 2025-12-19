@@ -1,47 +1,5 @@
 # DevEnGalère - Architecture Documentation
 
-## Project Structure
-
-This project follows a modular architecture with clear separation of concerns for better maintainability and scalability.
-
-\`\`\`
-/
-├── app/                      # Next.js App Router pages
-│   ├── layout.tsx           # Root layout with metadata
-│   ├── page.tsx             # Homepage
-│   ├── bons-plans/          # Deals pages
-│   ├── projets/             # Projects pages
-│   ├── blog/                # Blog pages
-│   └── ...
-├── components/              # React components
-│   ├── ui/                  # Reusable UI components
-│   │   ├── filter-bar.tsx  # Filter components
-│   │   └── ...
-│   ├── sections/            # Page section components
-│   │   └── hero-section.tsx
-│   ├── deal-card.tsx        # Feature components
-│   ├── project-card.tsx
-│   └── ...
-├── lib/                     # Business logic & utilities
-│   ├── constants.ts         # App-wide constants
-│   ├── data/                # Data layer (separated by domain)
-│   │   ├── index.ts         # Export aggregator
-│   │   ├── deals.ts
-│   │   ├── projects.ts
-│   │   ├── articles.ts
-│   │   └── videos.ts
-│   └── utils/               # Utility functions
-│       ├── deal-helpers.ts  # Deal-specific utilities
-│       └── format.ts        # Formatting utilities
-├── hooks/                   # Custom React hooks
-│   ├── use-copy-to-clipboard.ts
-│   ├── use-filter.ts
-│   └── ...
-├── types/                   # TypeScript type definitions
-│   └── index.ts
-└── public/                  # Static assets
-\`\`\`
-
 ## Architecture Principles
 
 ### 1. Separation of Concerns
