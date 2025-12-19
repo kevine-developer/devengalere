@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants";
+import { SITE_CONFIG, } from "@/lib/constants";
 import {
   GithubIcon,
   LinkedinIcon,
@@ -8,7 +8,7 @@ import {
 } from "../icons/iconAll";
 
 const footerLinks = {
-  navigation: [{ href: "/", label: "Accueil" }, ...NAV_LINKS],
+  navigation: [{ href: "/", label: "Accueil" }],
   social: [
     { href: SITE_CONFIG.social.github, label: "GitHub", icon: GithubIcon },
     { href: SITE_CONFIG.social.youtube, label: "YouTube", icon: YoutubeIcon },
